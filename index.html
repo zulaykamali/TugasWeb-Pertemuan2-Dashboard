@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Siti Zulayka Maulida Amali - Profil Pribadi</title>
+
+    <meta
+        name="description"
+        content="Website profil pribadi Siti Zulayka Maulida Amali, mahasiswa Ilmu Komputer Universitas Negeri Medan."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header__content">
+            <p class="site-header__eyebrow">PORTOFOLIO PRIBADI</p>
+
+            <h1 class="site-header__title">
+                Siti Zulayka Maulida Amali
+            </h1>
+
+            <p class="site-header__subtitle">
+                Mahasiswa Ilmu Komputer Universitas Negeri Medan
+            </p>
+        </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Navigasi utama">
+        <div class="site-nav__links">
+            <a class="site-nav__link" href="#tentang">
+                Tentang Saya
+            </a>
+
+            <a class="site-nav__link" href="#pendidikan">
+                Pendidikan
+            </a>
+
+            <a class="site-nav__link" href="#keahlian">
+                Keahlian
+            </a>
+
+            <a class="site-nav__link" href="#kontak">
+                Kontak
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <section id="tentang" class="about">
+            <div class="about__content">
+                <p class="section-label">01 — TENTANG</p>
+
+                <h2 class="about__title">
+                    Tentang Saya
+                </h2>
+
+                <p class="about__description">
+                    Halo, saya adalah seorang mahasiswa Universitas Negeri Medan
+                    angkatan 2025 dari Jurusan Matematika dan Program Studi Ilmu Komputer.
+                </p>
+            </div>
+
+            <figure class="about__figure">
+                <img
+                    class="about__image"
+                    src="profil.jpeg"
+                    alt="Foto profil Siti Zulayka Maulida Amali"
+                >
+
+                <figcaption class="about__caption">
+                    Foto profil saya
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="pendidikan" class="education">
+            <div class="education__header">
+                <p class="section-label">02 — PENDIDIKAN</p>
+
+                <h2 class="education__title">
+                    Pendidikan
+                </h2>
+            </div>
+
+            <article class="education__card">
+                <h3 class="education__card-title">
+                    Riwayat Pendidikan
+                </h3>
+
+                <div class="education__list">
+                    <p class="education__item">
+                        <time datetime="2025">2025</time> - Sekarang:
+                        Universitas Negeri Medan
+                    </p>
+
+                    <p class="education__item">
+                        <time datetime="2022">2022</time> -
+                        <time datetime="2025">2025</time>:
+                        SMA Negeri 1 Babalan
+                    </p>
+
+                    <p class="education__item">
+                        <time datetime="2019">2019</time> -
+                        <time datetime="2022">2022</time>:
+                        SMP Negeri 2 Babalan
+                    </p>
+
+                    <p class="education__item">
+                        <time datetime="2012">2012</time> -
+                        <time datetime="2019">2019</time>:
+                        SD Swasta IT Adzkia
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section id="keahlian" class="skills">
+            <div class="skills__header">
+                <p class="section-label">03 — KEAHLIAN</p>
+
+                <h2 class="skills__title">
+                    Keahlian
+                </h2>
+            </div>
+
+            <article class="skills__card">
+                <h3 class="skills__card-title">
+                    Design Grafis
+                </h3>
+
+                <p class="skills__description">
+                    Saya memiliki ketertarikan dalam membuat desain visual
+                    seperti feed media sosial, poster, dan berbagai konten grafis.
+                </p>
+            </article>
+        </section>
+
+        <aside class="interests">
+            <p class="section-label">04 — PERSONAL</p>
+
+            <h2 class="interests__title">
+                Hobi dan Minat
+            </h2>
+
+            <p class="interests__description">
+                Di waktu luang, saya senang menonton film, mendengarkan musik,
+                dan mencoba mempelajari hal-hal baru.
+            </p>
+        </aside>
+
+        <section id="kontak" class="contact">
+            <div class="contact__header">
+                <p class="section-label">05 — KONTAK</p>
+
+                <h2 class="contact__title">
+                    Hubungi Saya
+                </h2>
+
+                <p class="contact__description">
+                    Jika Anda ingin menghubungi saya, silakan isi formulir berikut.
+                </p>
+            </div>
+
+            <form
+                class="contact__form"
+                action="#"
+                method="post"
+            >
+                <div class="contact__field">
+                    <label
+                        class="contact__label"
+                        for="nama"
+                    >
+                        Nama Lengkap:
+                    </label>
+
+                    <input
+                        class="contact__input"
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        required
+                    >
+                </div>
+
+                <div class="contact__field">
+                    <label
+                        class="contact__label"
+                        for="email"
+                    >
+                        Email:
+                    </label>
+
+                    <input
+                        class="contact__input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    >
+                </div>
+
+                <div class="contact__field">
+                    <label
+                        class="contact__label"
+                        for="tanggal"
+                    >
+                        Tanggal:
+                    </label>
+
+                    <input
+                        class="contact__input"
+                        type="date"
+                        id="tanggal"
+                        name="tanggal"
+                        required
+                    >
+                </div>
+
+                <div class="contact__field">
+                    <label
+                        class="contact__label"
+                        for="pesan"
+                    >
+                        Pesan:
+                    </label>
+
+                    <textarea
+                        class="contact__input contact__textarea"
+                        id="pesan"
+                        name="pesan"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <button
+                    class="contact__button"
+                    type="submit"
+                >
+                    Kirim Pesan
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p class="site-footer__text">
+            &copy; 2026 Siti Zulayka Maulida Amali.
+        </p>
+    </footer>
+
+</body>
+</html>
