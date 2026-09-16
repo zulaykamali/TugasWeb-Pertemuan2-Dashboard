@@ -1,0 +1,19 @@
+@use "variables" as v;
+
+@function spacing($level) {
+    @if $level == "small" {
+        @return v.$space-sm;
+    }
+
+    @else if $level == "medium" {
+        @return v.$space-lg;
+    }
+
+    @else if $level == "large" {
+        @return v.$space-2xl;
+    }
+
+    @else {
+        @return v.$space-lg;
+    }
+}

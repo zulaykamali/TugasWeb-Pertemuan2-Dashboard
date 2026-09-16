@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.contact {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    align-items: center;
+
+    gap: v.$space-5xl;
+
+    min-height: calc(100vh - v.$nav-height);
+
+    padding-top: v.$space-4xl;
+    padding-bottom: v.$space-4xl;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        max-width: 450px;
+
+        color: v.$color-forest;
+
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.055em;
+    }
+
+    &__description {
+        max-width: 390px;
+
+        margin-top: 1.3rem;
+
+        color: v.$color-forest;
+
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    &__form {
+        display: grid;
+        gap: 0.85rem;
+
+        width: 100%;
+        max-width: 470px;
+
+        margin-left: auto;
+
+        padding: 1.7rem;
+
+        background-color: v.$color-cream;
+        color: v.$color-forest;
+
+        @include m.card;
+    }
+
+    &__field {
+        display: grid;
+        gap: v.$space-xs;
+    }
+
+    &__label {
+        color: v.$color-forest;
+
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    &__input {
+        width: 100%;
+
+        padding: 0.65rem 0.8rem;
+
+        background-color: v.$color-white;
+        color: v.$color-forest;
+
+        font-size: 0.85rem;
+
+        border: 2px solid rgba(10, 51, 35, 0.25);
+        border-radius: v.$radius-sm;
+
+        outline: none;
+
+        transition: border-color 0.2s ease;
+
+        &:focus {
+            border-color: v.$color-teal;
+        }
+    }
+
+    &__textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-tablet) {
+    .contact {
+        grid-template-columns: 1fr;
+
+        gap: v.$space-3xl;
+
+        min-height: auto;
+
+        padding-top: v.$space-5xl;
+        padding-bottom: v.$space-5xl;
+
+        &__form {
+            max-width: 470px;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+// ========================================
+// MOBILE
+// ========================================
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .contact {
+        gap: v.$space-2xl;
+
+        padding-top: v.$space-4xl;
+        padding-bottom: v.$space-4xl;
+
+        &__title {
+            font-size: clamp(2.5rem, 12vw, 3.5rem);
+        }
+
+        &__form {
+            padding: 1.4rem;
+
+            box-shadow: v.$shadow-mobile;
+        }
+    }
+
+    .contact__button {
+        width: 100%;
+    }
+}

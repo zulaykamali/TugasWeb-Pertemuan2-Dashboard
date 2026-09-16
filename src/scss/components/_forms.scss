@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as v;
+
+input,
+textarea {
+    font-family: v.$font-main;
+}
+
+button {
+    font-family: v.$font-main;
+}

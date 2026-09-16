@@ -1,0 +1,120 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.education {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: center;
+
+    gap: v.$space-5xl;
+
+    min-height: calc(100vh - v.$nav-height);
+
+    padding-top: v.$space-4xl;
+    padding-bottom: v.$space-4xl;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        max-width: 420px;
+
+        color: v.$color-forest;
+
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+    }
+
+    &__card {
+        padding: v.$space-3xl;
+
+        background-color: v.$color-sage;
+        color: v.$color-forest;
+
+        @include m.card;
+    }
+
+    &__card-title {
+        margin-bottom: 1.8rem;
+
+        color: v.$color-forest;
+
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        padding: v.$space-lg 0;
+
+        color: v.$color-forest;
+
+        font-size: 0.9rem;
+
+        border-bottom: 1px solid rgba(10, 51, 35, 0.25);
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        time {
+            font-weight: 700;
+        }
+    }
+}
+
+
+// ========================================
+// TABLET
+// ========================================
+
+@include m.respond-to(v.$breakpoint-tablet) {
+    .education {
+        grid-template-columns: 1fr;
+
+        gap: v.$space-2xl;
+
+        min-height: auto;
+
+        padding-top: v.$space-5xl;
+        padding-bottom: v.$space-5xl;
+    }
+}
+
+
+// ========================================
+// MOBILE
+// ========================================
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .education {
+        gap: v.$space-xl;
+
+        padding-top: v.$space-4xl;
+        padding-bottom: v.$space-4xl;
+
+        &__card {
+            padding: v.$space-xl;
+
+            box-shadow: v.$shadow-mobile;
+        }
+
+        &__item {
+            font-size: 0.82rem;
+        }
+    }
+}

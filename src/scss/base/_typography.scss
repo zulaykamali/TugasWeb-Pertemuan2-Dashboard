@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as v;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: v.$color-cream;
+    color: v.$color-forest;
+    font-family: v.$font-main;
+    line-height: 1.6;
+}
+
+::selection {
+    background-color: v.$color-rose;
+    color: v.$color-forest;
+}

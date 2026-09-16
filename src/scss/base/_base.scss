@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as v;
+
+@for $i from 1 through 4 {
+    .mt-#{$i} {
+        margin-top: #{$i}rem;
+    }
+}

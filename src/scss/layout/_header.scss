@@ -1,0 +1,79 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.site-header {
+    padding: 4.5rem 4% 4rem;
+
+    background-color: v.$color-forest;
+    color: v.$color-cream;
+
+    border-bottom: 2px solid v.$color-forest;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include m.container;
+
+        min-height: 48vh;
+    }
+
+    &__eyebrow {
+        margin-bottom: v.$space-lg;
+
+        color: v.$color-sage;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+    }
+
+    &__title {
+        max-width: 1000px;
+
+        color: v.$color-cream;
+
+        font-size: clamp(3.2rem, 7.5vw, 7rem);
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+    }
+
+    &__subtitle {
+        margin-top: 1.8rem;
+
+        color: v.$color-cream;
+
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+    }
+}
+
+@include m.respond-to(v.$breakpoint-tablet) {
+    .site-header {
+        padding-top: v.$space-5xl;
+        padding-bottom: v.$space-5xl;
+
+        &__content {
+            min-height: 40vh;
+        }
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .site-header {
+        padding: v.$space-4xl 4%;
+
+        &__content {
+            min-height: 45vh;
+        }
+
+        &__title {
+            font-size: clamp(2.8rem, 15vw, 4.5rem);
+        }
+
+        &__subtitle {
+            font-size: 0.85rem;
+        }
+    }
+}

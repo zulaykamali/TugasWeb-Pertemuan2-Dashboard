@@ -1,0 +1,116 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: center;
+
+    gap: v.$space-6xl;
+
+    min-height: calc(100vh - v.$nav-height);
+
+    padding-top: v.$space-4xl;
+    padding-bottom: v.$space-4xl;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-left: 0;
+    }
+
+    &__title {
+        margin-bottom: 1.2rem;
+
+        color: v.$color-forest;
+
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+    }
+
+    &__description {
+        max-width: 650px;
+
+        color: v.$color-forest;
+
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+
+    &__figure {
+        width: 310px;
+
+        margin: 0;
+        justify-self: end;
+
+        padding: 0.55rem;
+
+        background-color: v.$color-rose;
+
+        @include m.card;
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+
+        object-fit: cover;
+
+        border-radius: 12px;
+    }
+
+    &__caption {
+        padding: 0.55rem 0.2rem 0.05rem;
+
+        color: v.$color-forest;
+
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-tablet) {
+    .about {
+        grid-template-columns: 1fr;
+
+        gap: v.$space-3xl;
+
+        min-height: auto;
+
+        padding-top: v.$space-5xl;
+        padding-bottom: v.$space-5xl;
+
+        &__figure {
+            width: 310px;
+
+            justify-self: center;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .about {
+        gap: v.$space-2xl;
+
+        padding-top: v.$space-4xl;
+        padding-bottom: v.$space-4xl;
+
+        &__title {
+            font-size: clamp(2.5rem, 12vw, 3.5rem);
+        }
+
+        &__description {
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+
+        &__figure {
+            width: 280px;
+        }
+    }
+}

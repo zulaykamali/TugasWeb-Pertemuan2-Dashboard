@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.interests {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 250px;
+
+    margin-top: v.$space-lg;
+    margin-bottom: v.$space-5xl;
+
+    padding: v.$space-3xl;
+
+    background-color: v.$color-rose;
+    color: v.$color-forest;
+
+    @include m.card;
+
+    .section-label {
+        color: v.$color-teal;
+    }
+
+    &__title {
+        margin-bottom: v.$space-lg;
+
+        color: v.$color-forest;
+
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__description {
+        max-width: 700px;
+
+        color: v.$color-forest;
+
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .interests {
+        min-height: 220px;
+
+        margin-bottom: v.$space-4xl;
+
+        padding: v.$space-xl;
+
+        box-shadow: v.$shadow-mobile;
+    }
+}

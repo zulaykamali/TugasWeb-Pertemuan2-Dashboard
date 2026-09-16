@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.site-footer {
+    margin-top: v.$space-4xl;
+
+    padding: v.$space-2xl 4%;
+
+    background-color: v.$color-forest;
+    color: v.$color-cream;
+
+    text-align: center;
+
+    &__text {
+        color: v.$color-cream;
+
+        font-size: 0.8rem;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .site-footer {
+        margin-top: v.$space-2xl;
+
+        padding: v.$space-xl 4%;
+    }
+}

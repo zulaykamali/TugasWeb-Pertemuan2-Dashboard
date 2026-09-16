@@ -1,0 +1,6 @@
+@use "../abstracts/variables" as v;
+
+body {
+    background-color: v.$color-cream;
+    color: v.$color-forest;
+}

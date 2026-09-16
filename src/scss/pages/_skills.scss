@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    gap: v.$space-xl;
+
+    min-height: calc(100vh - v.$nav-height);
+
+    padding-top: v.$space-4xl;
+    padding-bottom: v.$space-4xl;
+
+    &__header,
+    &__card {
+        min-height: 280px;
+
+        padding: v.$space-3xl;
+
+        border: 2px solid v.$color-forest;
+        border-radius: v.$radius-md;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: v.$color-forest;
+        color: v.$color-cream;
+
+        text-align: center;
+
+        .section-label {
+            color: v.$color-sage;
+        }
+    }
+
+    &__title {
+        color: v.$color-cream;
+
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background-color: v.$color-cream;
+        color: v.$color-forest;
+    }
+
+    &__card-title {
+        margin-bottom: v.$space-lg;
+
+        color: v.$color-forest;
+
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        max-width: 500px;
+
+        color: v.$color-forest;
+
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-tablet) {
+    .skills {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: v.$space-xl;
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .skills {
+        padding-top: v.$space-4xl;
+        padding-bottom: v.$space-4xl;
+
+        &__header,
+        &__card {
+            min-height: 220px;
+
+            padding: v.$space-xl;
+        }
+    }
+}

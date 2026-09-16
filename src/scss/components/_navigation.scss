@@ -1,0 +1,79 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+
+    min-height: v.$nav-height;
+    padding: 0.7rem 4%;
+
+    background-color: v.$color-rose;
+    border-bottom: 2px solid v.$color-forest;
+
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+
+        @include m.container;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: v.$space-sm v.$space-lg;
+
+        color: v.$color-forest;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        border-radius: v.$radius-sm;
+
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            background-color: v.$color-cream;
+            color: v.$color-forest;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@include m.respond-to(v.$breakpoint-mobile) {
+    .site-nav {
+        min-height: v.$nav-height-mobile;
+        padding: 0.4rem 3%;
+
+        &__links {
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            width: 100%;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__link {
+            flex: 0 0 auto;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.78rem;
+        }
+    }
+}
